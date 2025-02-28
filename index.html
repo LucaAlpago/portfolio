@@ -13,46 +13,30 @@
             color: white;
             text-align: center;
         }
-
-        .header-container {
-            position: relative;
-            height: 200px;
-            background: linear-gradient(45deg, #000, #222, #000);
-            background-size: 200% 200%;
-            animation: gradientMove 5s infinite alternate;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: left top; }
-            100% { background-position: right bottom; }
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            background: url('https://cdn-icons-png.flaticon.com/512/2920/2920277.png') center/contain no-repeat;
-            filter: invert(1);
-            margin-bottom: 10px;
-        }
-
-        .header-title {
-            font-size: 36px;
+        header {
+            background: url('background-header.jpg') center/cover no-repeat;
+            padding: 60px 20px;
+            font-size: 42px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            animation: glow 2s infinite alternate;
+            letter-spacing: 2px;
+            color: white;
+            position: relative;
         }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
-            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        .logo {
+            width: 80px;
+            height: auto;
+            position: absolute;
+            top: 10px;
+            left: 20px;
         }
-
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .animated-title {
+            animation: fadeIn 2s ease-in-out;
+        }
         nav {
             display: flex;
             justify-content: center;
@@ -60,125 +44,110 @@
             padding: 15px;
             background-color: #222;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             padding: 12px 18px;
             font-weight: 600;
             transition: 0.3s;
-            border-radius: 5px;
         }
-
         nav a:hover {
             background-color: #444;
+            border-radius: 5px;
         }
-
-        .hero {
-            background: url('Nuova cartella/865A6869.jpg') center/cover no-repeat;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: 600;
-            text-shadow: 2px 2px 5px black;
-            color: white;
-        }
-
-        .container {
+        .section {
+            padding: 60px 20px;
             max-width: 1000px;
             margin: auto;
-            padding: 40px;
         }
-
         .services {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
         }
-
-        .service-card {
+        .service-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+        .service-list li {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .service-list li:hover {
+            transform: scale(1.05);
+        }
+        .contact-form {
             background-color: #222;
             padding: 20px;
             border-radius: 10px;
-            width: 250px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 600px;
+            margin: auto;
         }
-
-        .service-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .portfolio img {
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            margin: 10px;
-            transition: transform 0.3s ease;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: white;
         }
-
-        .portfolio img:hover {
-            transform: scale(1.05);
-        }
-
         footer {
             background-color: #000;
             padding: 20px;
             margin-top: 30px;
         }
-
-        footer a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #ff6347;
-        }
     </style>
 </head>
 <body>
-    
-    <div class="header-container">
-        <div class="logo"></div>
-        <div class="header-title">Studio20 - Fotografo & Videomaker</div>
-    </div>
-
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="animated-title">Studio20 - Fotografo & Videomaker</div>
+    </header>
     <nav>
         <a href="#chisono">Chi Sono</a>
         <a href="#servizi">Servizi</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contatti">Contatti</a>
     </nav>
-
-    <div class="hero">Benvenuto nel mio studio</div>
-
-    <div class="container" id="chisono">
+    <section id="chisono" class="section">
         <h2>Chi Sono</h2>
-        <p>Sono un fotografo e videomaker professionista, specializzato in matrimoni, eventi e produzioni video.</p>
-    </div>
-
-    <div class="container services" id="servizi">
+        <p>Fotografo e videomaker con anni di esperienza nel settore, catturo momenti indimenticabili con un tocco artistico e professionale.</p>
+    </section>
+    <section id="servizi" class="section">
         <h2>I Miei Servizi</h2>
-        <div class="service-card"><h3>Fotografia di Matrimonio</h3><p>Servizi per matrimoni, dai preparativi alla cerimonia.</p></div>
-        <div class="service-card"><h3>Fotografia di Evento</h3><p>Eventi aziendali, feste private e altro.</p></div>
-        <div class="service-card"><h3>Videomaking</h3><p>Produzione video per eventi e aziende.</p></div>
-    </div>
-
+        <ul class="service-list">
+            <li>📷 Fotografia di Matrimonio</li>
+            <li>🎉 Fotografia di Evento</li>
+            <li>🎥 Videomaking</li>
+            <li>📸 Shooting Personalizzati</li>
+        </ul>
+    </section>
+    <section id="portfolio" class="section portfolio-gallery">
+        <h2>Il Mio Portfolio</h2>
+        <div class="portfolio-item">Foto 1</div>
+        <div class="portfolio-item">Foto 2</div>
+        <div class="portfolio-item">Foto 3</div>
+    </section>
+    <section id="contatti" class="section">
+        <h2>Contattami</h2>
+        <form class="contact-form">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
+            <button type="submit">Invia Messaggio</button>
+        </form>
+    </section>
     <footer>
         &copy; 2025 Studio20 - Tutti i diritti riservati.
-        <div>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">LinkedIn</a>
-        </div>
     </footer>
 </body>
 </html>
