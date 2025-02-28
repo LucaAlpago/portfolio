@@ -12,6 +12,7 @@
             background-color: #111;
             color: white;
             text-align: center;
+            line-height: 1.6;
         }
         header {
             background: url('background-header.jpg') center/cover no-repeat;
@@ -21,7 +22,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: white;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
         }
         .logo {
             width: 80px;
@@ -38,9 +43,12 @@
             animation: fadeIn 2s ease-in-out;
         }
         .full-width-image {
-            width: 100%;
+            width: 90%;
+            max-width: 1200px;
             display: block;
-            margin-top: 20px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         nav {
             display: flex;
@@ -48,6 +56,7 @@
             gap: 20px;
             padding: 15px;
             background-color: #222;
+            margin-top: 100px; /* Spazio per il header fisso */
         }
         nav a {
             color: white;
@@ -66,10 +75,10 @@
             margin: auto;
         }
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
         .service-list {
             list-style: none;
@@ -84,13 +93,14 @@
             border-radius: 8px;
             margin: 10px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         .service-list li:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
         .service-icon {
             font-size: 24px;
@@ -116,6 +126,37 @@
             padding: 20px;
             margin-top: 30px;
         }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .logo {
+                width: 60px;
+            }
+            .section {
+                padding: 30px 10px;
+            }
+            .service-list li {
+                flex-direction: column;
+                text-align: center;
+            }
+            .full-width-image {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -123,7 +164,7 @@
         <img src="logo.png" alt="Logo" class="logo">
         <div class="animated-title">Studio20 - Fotografo & Videomaker</div>
     </header>
-    <img src="Nuova cartella/865A6869.jpg" alt="Studio20" class="full-width-image">
+    <img src="Nuova cartella/865A6869.jpg" alt="Studio20" class="full-width-image" loading="lazy">
     <nav>
         <a href="#chisono">Chi Sono</a>
         <a href="#servizi">Servizi</a>
@@ -136,12 +177,14 @@
     </section>
     <section id="servizi" class="section">
         <h2>I Miei Servizi</h2>
-        <ul class="service-list">
-            <li><span class="service-icon">📷</span> Fotografia di Matrimonio - Servizio completo per il giorno più importante della tua vita.</li>
-            <li><span class="service-icon">🎉</span> Fotografia di Evento - Copertura fotografica per eventi aziendali e privati.</li>
-            <li><span class="service-icon">🎥</span> Videomaking - Produzione video per matrimoni, eventi e aziende.</li>
-            <li><span class="service-icon">📸</span> Shooting Personalizzati - Servizi fotografici su misura per ogni esigenza.</li>
-        </ul>
+        <div class="services">
+            <ul class="service-list">
+                <li><span class="service-icon">📷</span> Fotografia di Matrimonio - Servizio completo per il giorno più importante della tua vita.</li>
+                <li><span class="service-icon">🎉</span> Fotografia di Evento - Copertura fotografica per eventi aziendali e privati.</li>
+                <li><span class="service-icon">🎥</span> Videomaking - Produzione video per matrimoni, eventi e aziende.</li>
+                <li><span class="service-icon">📸</span> Shooting Personalizzati - Servizi fotografici su misura per ogni esigenza.</li>
+            </ul>
+        </div>
     </section>
     <section id="portfolio" class="section portfolio-gallery">
         <h2>Il Mio Portfolio</h2>
@@ -151,15 +194,34 @@
     </section>
     <section id="contatti" class="section">
         <h2>Contattami</h2>
-        <form class="contact-form">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
-            <button type="submit">Invia Messaggio</button>
+        <form class="contact-form" id="contact-form">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
+            
+            <button type="submit" id="submit-button">Invia Messaggio</button>
+            <p id="form-feedback"></p>
         </form>
     </section>
     <footer>
-        &copy; 2025 Studio20 - Tutti i diritti riservati.
+        <p>&copy; 2025 Studio20 - Tutti i diritti riservati.</p>
+        <div>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
     </footer>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("form-feedback").innerText = "Messaggio inviato con successo!";
+        });
+    </script>
 </body>
 </html>
