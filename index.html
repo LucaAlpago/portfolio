@@ -80,9 +80,15 @@
             margin: 10px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .service-list li:hover {
             transform: scale(1.05);
+        }
+        .service-icon {
+            font-size: 24px;
         }
         .contact-form {
             background-color: #222;
@@ -125,10 +131,10 @@
     <section id="servizi" class="section">
         <h2>I Miei Servizi</h2>
         <ul class="service-list">
-            <li>📷 Fotografia di Matrimonio</li>
-            <li>🎉 Fotografia di Evento</li>
-            <li>🎥 Videomaking</li>
-            <li>📸 Shooting Personalizzati</li>
+            <li><span class="service-icon">📷</span> Fotografia di Matrimonio - Servizio completo per il giorno più importante della tua vita.</li>
+            <li><span class="service-icon">🎉</span> Fotografia di Evento - Copertura fotografica per eventi aziendali e privati.</li>
+            <li><span class="service-icon">🎥</span> Videomaking - Produzione video per matrimoni, eventi e aziende.</li>
+            <li><span class="service-icon">📸</span> Shooting Personalizzati - Servizi fotografici su misura per ogni esigenza.</li>
         </ul>
     </section>
     <section id="portfolio" class="section portfolio-gallery">
@@ -147,6 +153,11 @@
         </form>
     </section>
     <footer>
+        &copy; 2025 Studio20 - Tutti i diritti riservati.
+    </footer>
+</body>
+</html>
+
         &copy; 2025 Studio20 - Tutti i diritti riservati.
     </footer>
 </body>
