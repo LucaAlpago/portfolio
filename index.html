@@ -1,62 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotografo & Videomaker - Il Tuo Nome</title>
+    <title>Fotografo & Videomaker - Studio20</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #111; color: #fff; }
-        header { background: #000; padding: 20px; text-align: center; font-size: 24px; }
-        nav { text-align: center; margin-top: 10px; }
-        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 18px; }
-        section { padding: 50px 20px; text-align: center; }
-        .portfolio img { width: 300px; margin: 10px; border-radius: 10px; }
-        footer { background: #000; text-align: center; padding: 20px; margin-top: 20px; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
+        header {
+            background-color: black;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #222;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x600/?nature,dark') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px black;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+        }
+        .services img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #000;
+            padding: 20px;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
     <header>Fotografo & Videomaker - Studio20</header>
     <nav>
-        <a href="#about">Chi Sono</a>
-        <a href="#services">Servizi</a>
+        <a href="#chisono">Chi Sono</a>
+        <a href="#servizi">Servizi</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contatti</a>
+        <a href="#contatti">Contatti</a>
     </nav>
-    
-    <section id="about">
+    <div class="hero">Benvenuto nel mio studio</div>
+    <div class="container" id="chisono">
         <h2>Chi Sono</h2>
         <p>Sono un fotografo e videomaker professionista, specializzato in matrimoni, eventi e produzione video.</p>
-        <style>
-  .hero {
-    background-image: url('Nuova cartella/865A6869.jpg');
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-  }
-</style>
-
-<div class="hero"></div>
-    </section>
-    
-    <section id="services">
+    </div>
+    <div class="container services" id="servizi">
         <h2>Servizi</h2>
-        <img src="Nuova cartella/865A6451.jpg" alt="Descrizione della foto" width="300">
+        <img src="https://source.unsplash.com/400x300/?photography" alt="Servizi di fotografia">
         <p>Offro servizi di fotografia e videografia per eventi, matrimoni, pubblicità e molto altro.</p>
-    </section>
-    
-    <section id="portfolio" class="portfolio">
+    </div>
+    <div class="container" id="portfolio">
         <h2>Portfolio</h2>
-        <img src="portfolio1.jpg" alt="Foto 1">
-        <img src="portfolio2.jpg" alt="Foto 2">
-        <img src="portfolio3.jpg" alt="Foto 3">
-    </section>
-    
-    <section id="contact">
+        <p>Alcuni dei miei lavori:</p>
+        <p>📷 <a href="#">Foto 1</a> | 📷 <a href="#">Foto 2</a> | 📷 <a href="#">Foto 3</a></p>
+    </div>
+    <div class="container" id="contatti">
         <h2>Contatti</h2>
-        <p>Email: tuo@email.com</p>
+        <p>Email: <a href="mailto:tuo@email.com">tuo@email.com</a></p>
         <p>Telefono: +39 123 456 7890</p>
-    </section>
-    
+    </div>
     <footer>
         &copy; 2025 Il Tuo Nome - Tutti i diritti riservati.
     </footer>
