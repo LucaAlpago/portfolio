@@ -14,57 +14,171 @@
             text-align: center;
         }
 
-        /* Header con sfondo grafico */
-        header {
+        .header-container {
             position: relative;
-            height: 250px;
-            background: linear-gradient(135deg, #1a1a1a, #333);
-            overflow: hidden;
+            height: 200px;
+            background: linear-gradient(45deg, #000, #222, #000);
+            background-size: 200% 200%;
+            animation: gradientMove 5s infinite alternate;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        /* Effetto sfondo grafico */
-        .background-animation {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('https://source.unsplash.com/1600x900/?abstract,dark') center/cover no-repeat;
-            opacity: 0.2;
+        @keyframes gradientMove {
+            0% { background-position: left top; }
+            100% { background-position: right bottom; }
         }
 
-        /* Logo videocamera */
         .logo {
-            width: 100px;
-            height: auto;
+            width: 80px;
+            height: 80px;
+            background: url('https://cdn-icons-png.flaticon.com/512/2920/2920277.png') center/contain no-repeat;
+            filter: invert(1);
             margin-bottom: 10px;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
         }
 
-        /* Titolo con effetto luminoso */
-        .title {
-            font-size: 42px;
+        .header-title {
+            font-size: 36px;
             font-weight: 700;
-            background: linear-gradient(90deg, #ff6347, #ffcc00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(255, 99, 71, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: glow 2s infinite alternate;
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 10px rgba(255, 99, 71, 0.6); }
-            100% { text-shadow: 0 0 20px rgba(255, 99, 71, 1); }
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background-color: #222;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-weight: 600;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #444;
+        }
+
+        .hero {
+            background: url('Nuova cartella/865A6869.jpg') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px black;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff6347;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="background-animation"></div>
-        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Video_Camera_Icon.svg" alt="Logo Videocamera">
-        <h1 class="title">Studio20 - Fotografo & Videomaker</h1>
-    </header>
+    
+    <div class="header-container">
+        <div class="logo"></div>
+        <div class="header-title">Studio20 - Fotografo & Videomaker</div>
+    </div>
+
+    <nav>
+        <a href="#chisono">Chi Sono</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <div class="hero">Benvenuto nel mio studio</div>
+
+    <div class="container" id="chisono">
+        <h2>Chi Sono</h2>
+        <p>Sono un fotografo e videomaker professionista, specializzato in matrimoni, eventi e produzioni video.</p>
+    </div>
+
+    <div class="container services" id="servizi">
+        <h2>I Miei Servizi</h2>
+        <div class="service-card"><h3>Fotografia di Matrimonio</h3><p>Servizi per matrimoni, dai preparativi alla cerimonia.</p></div>
+        <div class="service-card"><h3>Fotografia di Evento</h3><p>Eventi aziendali, feste private e altro.</p></div>
+        <div class="service-card"><h3>Videomaking</h3><p>Produzione video per eventi e aziende.</p></div>
+    </div>
+
+    <footer>
+        &copy; 2025 Studio20 - Tutti i diritti riservati.
+        <div>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
 </body>
 </html>
