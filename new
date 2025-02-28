@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio20 - Fotografo & Videomaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Stili Generali */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            line-height: 1.6;
+        }
+        header {
+            background: url('background-header.jpg') center/cover no-repeat;
+            padding: 60px 20px;
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            position: relative;
+        }
+        .logo {
+            width: 170px;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+        .header-title {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .full-width-image {
+            width: 90%;
+            max-width: 1200px;
+            display: block;
+            margin: 140px auto 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background-color: #222;
+            margin-top: 100px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Stili Servizi */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-item {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            max-width: 250px;
+        }
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .service-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Modulo Contatti */
+        .contact-form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: white;
+        }
+        .contact-form button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #ff4500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">Studio20 - Fotografo & Videomaker</div>
+        <img src="Nuova cartella/logo.webp" alt="Logo Videocamera" class="logo">
+    </header>
+
+    <img src="Nuova cartella/865A6869.jpg" alt="Studio20" class="full-width-image" loading="lazy">
+
+    <nav>
+        <a href="#chisono">Chi Sono</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <section id="chisono" class="section">
+        <h2>Chi Sono</h2>
+        <p>Fotografo e videomaker con anni di esperienza, catturo momenti indimenticabili con un tocco artistico.</p>
+    </section>
+
+    <section id="servizi" class="section">
+        <h2>I Miei Servizi</h2>
+        <div class="services">
+            <div class="service-item">
+                <p>📷 Fotografia di Matrimonio</p>
+                <img src="Nuova cartella/865A6828.jpg" alt="Matrimonio">
+            </div>
+            <div class="service-item">
+                <p>🎉 Fotografia di Evento</p>
+                <img src="Nuova cartella/865A6827.jpg" alt="Evento">
+            </div>
+            <div class="service-item">
+                <p>🎥 Videomaking</p>
+                <img src="Nuova cartella/865A6823.jpg" alt="Video">
+            </div>
+            <div class="service-item">
+                <p>📸 Shooting Personalizzati</p>
+                <img src="Nuova cartella/865A6820.jpg" alt="Shooting">
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="section">
+        <h2>Contattami</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Messaggio" rows="4" required></textarea>
+            <button type="submit">Invia Messaggio</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Studio20 - Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
