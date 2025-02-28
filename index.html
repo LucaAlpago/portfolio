@@ -25,7 +25,7 @@
             position: relative;
         }
         .logo {
-            width: 120px; /* Logo più grande */
+            width: 170px; /* Logo più grande */
             height: auto;
             position: absolute;
             top: 15px;
@@ -197,7 +197,6 @@
     <section id="chisono" class="section">
         <h2>Chi Sono</h2>
         <p>Fotografo e videomaker con anni di esperienza nel settore, catturo momenti indimenticabili con un tocco artistico e professionale.</p>
-    </section>
     <section id="servizi" class="section">
     <h2>I Miei Servizi</h2>
     <div class="services">
@@ -219,6 +218,53 @@
         </div>
     </div>
 </section>
+
+<style>
+    .services {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+    .service-item {
+        background-color: #222;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        width: 23%;
+    }
+    .service-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .service-item img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    @media (max-width: 1024px) {
+        .services {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-item {
+            width: 45%;
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: 768px) {
+        .services {
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-item {
+            width: 100%;
+        }
+    }
+</style>
+
 
 <style>
     .services {
