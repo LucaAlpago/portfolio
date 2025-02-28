@@ -13,12 +13,58 @@
             color: white;
             text-align: center;
         }
+
+        /* Stile per l'header */
         header {
             background-color: black;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: 600;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
+
+        /* Logo videocamera */
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Effetto onda sul testo del titolo */
+        .title {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff6347, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(255, 99, 71, 0.6);
+            display: inline-block;
+            animation: wave 2s infinite;
+        }
+
+        /* Animazioni */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        /* Stile per la navbar */
         nav {
             display: flex;
             justify-content: center;
@@ -26,113 +72,37 @@
             padding: 10px;
             background-color: #222;
         }
+
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 12px 18px;
             transition: 0.3s;
+            font-weight: 600;
         }
+
         nav a:hover, nav a.active {
             background-color: #444;
             border-radius: 5px;
             font-weight: bold;
         }
-        .hero {
-            background: url('Nuova cartella/865A6869.jpg') center/cover no-repeat;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: 600;
-            text-shadow: 2px 2px 5px black;
-            color: white;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px;
-        }
-        .services {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .service-card {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-        .service-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .portfolio img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-        .portfolio img:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            background-color: #000;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        footer a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #ff6347;
-        }
-        .contact-form {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: auto;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: white;
-        }
-        .contact-form button {
-            background-color: #ff6347;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-    <header>Studio20 - Fotografo & Videomaker</header>
+
+    <header>
+        <!-- Logo della videocamera -->
+        <svg class="logo" viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="16" width="36" height="24" rx="4" fill="#ff6347"/>
+            <polygon points="48,24 64,16 64,48 48,40" fill="#ffcc00"/>
+            <circle cx="20" cy="28" r="4" fill="white"/>
+            <circle cx="30" cy="28" r="4" fill="white"/>
+        </svg>
+        
+        <!-- Titolo con effetto onda -->
+        <h1 class="title">Studio20 - Fotografo & Videomaker</h1>
+    </header>
+
     <nav>
         <a href="chisono.html" target="_blank">Chi Sono</a>
         <a href="servizi.html" target="_blank">Servizi</a>
@@ -140,62 +110,6 @@
         <a href="contatti.html" target="_blank">Contatti</a>
     </nav>
 
-    <div class="hero">
-        Benvenuto nel mio studio
-    </div>
-
-    <div class="container" id="chisono">
-        <h2>Chi Sono</h2>
-        <p>Sono un fotografo e videomaker professionista, specializzato in matrimoni, eventi e produzioni video. La mia passione per la fotografia mi spinge a catturare ogni momento speciale con un tocco unico.</p>
-    </div>
-
-    <div class="container services" id="servizi">
-        <h2>I Miei Servizi</h2>
-        <div class="service-card">
-            <img src="Nuova cartella/865A6451.jpg" alt="Fotografia di Matrimonio">
-            <h3>Fotografia di Matrimonio</h3>
-            <p>Offriamo un servizio fotografico completo per matrimoni, dai preparativi alla cerimonia.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://source.unsplash.com/250x250/?event" alt="Fotografia di Evento">
-            <h3>Fotografia di Evento</h3>
-            <p>Servizi fotografici per eventi aziendali, feste private, e molto altro.</p>
-        </div>
-        <div class="service-card">
-            <img src="https://source.unsplash.com/250x250/?videography" alt="Videomaking">
-            <h3>Videomaking</h3>
-            <p>Produzione video per matrimoni, eventi e video promozionali aziendali.</p>
-        </div>
-    </div>
-
-    <div class="container portfolio" id="portfolio">
-        <h2>Il Mio Portfolio</h2>
-        <div>
-            <img src="https://source.unsplash.com/300x200/?wedding" alt="Portfolio Foto 1">
-            <img src="https://source.unsplash.com/300x200/?event" alt="Portfolio Foto 2">
-            <img src="https://source.unsplash.com/300x200/?videography" alt="Portfolio Foto 3">
-        </div>
-    </div>
-
-    <div class="container" id="contatti">
-        <h2>Contattami</h2>
-        <form class="contact-form" action="mailto:tuo@email.com" method="post" enctype="text/plain">
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
-            <button type="submit">Invia Messaggio</button>
-        </form>
-        <p>Email: <a href="mailto:tuo@email.com">tuo@email.com</a></p>
-        <p>Telefono: +39 123 456 7890</p>
-    </div>
-
-    <footer>
-        &copy; 2025 Studio20 - Tutti i diritti riservati.
-        <div>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">Instagram</a>
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
-            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-    </footer>
 </body>
 </html>
+
