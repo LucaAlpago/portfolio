@@ -199,16 +199,62 @@
         <p>Fotografo e videomaker con anni di esperienza nel settore, catturo momenti indimenticabili con un tocco artistico e professionale.</p>
     </section>
     <section id="servizi" class="section">
-        <h2>I Miei Servizi</h2>
-        <div class="services">
-            <ul class="service-list">
-                <li><span class="service-icon">📷</span> Fotografia di Matrimonio - Servizio completo per il giorno più importante della tua vita.</li>
-                <li><span class="service-icon">🎉</span> Fotografia di Evento - Copertura fotografica per eventi aziendali e privati.</li>
-                <li><span class="service-icon">🎥</span> Videomaking - Produzione video per matrimoni, eventi e aziende.</li>
-                <li><span class="service-icon">📸</span> Shooting Personalizzati - Servizi fotografici su misura per ogni esigenza.</li>
-            </ul>
+    <h2>I Miei Servizi</h2>
+    <div class="services">
+        <div class="service-item">
+            <p><span class="service-icon">📷</span> Fotografia di Matrimonio - Servizio completo per il giorno più importante della tua vita.</p>
+            <img src="immagini/matrimonio.jpg" alt="Fotografia di Matrimonio">
         </div>
-    </section>
+        <div class="service-item">
+            <p><span class="service-icon">🎉</span> Fotografia di Evento - Copertura fotografica per eventi aziendali e privati.</p>
+            <img src="immagini/evento.jpg" alt="Fotografia di Evento">
+        </div>
+        <div class="service-item">
+            <p><span class="service-icon">🎥</span> Videomaking - Produzione video per matrimoni, eventi e aziende.</p>
+            <img src="immagini/videomaking.jpg" alt="Videomaking">
+        </div>
+        <div class="service-item">
+            <p><span class="service-icon">📸</span> Shooting Personalizzati - Servizi fotografici su misura per ogni esigenza.</p>
+            <img src="immagini/shooting.jpg" alt="Shooting Personalizzati">
+        </div>
+    </div>
+</section>
+
+<style>
+    .services {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .service-item {
+        background-color: #222;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        max-width: 250px;
+    }
+    .service-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .service-item img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+        .services {
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-item {
+            max-width: 100%;
+        }
+    }
+</style>
     <section id="portfolio" class="section portfolio-gallery">
         <h2>Il Mio Portfolio</h2>
         <div class="portfolio-item">Foto 1</div>
